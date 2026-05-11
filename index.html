@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@100..900&family=Playwrite+CU:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="view-viewport">
+    <div class="app-delivery">
+        <header class="app-header">
+            <div class="header-content">
+                <span class="promo-badge">Envío Gratis</span>
+                <h1>Pizza Express</h1>
+                <p>La mejor pizza artesanal a tu puerta</p>
+            </div>
+        </header>
+        
+        <div class="app-content">
+            <div class="action-area">
+                <button class="button">Confirmar Pedido</button>
+                <div class="loader-container" id="loader-pedido">
+    <div class="loader"></div>
+</div>
+                <div class="mensaje"></div>
+            </div>
+
+            <div class="tracking-grid">
+                <div class="item-card">
+                    <span class="icon">🥤</span>
+                    <div class="info">
+                        <label>Bebida</label>
+                        <div class="bebida"></div>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <span class="icon">🍕</span>
+                    <div class="info">
+                        <label>Plato Principal</label>
+                        <div class="pizza"></div>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <span class="icon">🍰</span>
+                    <div class="info">
+                        <label>Postre</label>
+                        <div class="postre"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>
