@@ -6,8 +6,8 @@ const postre = document.querySelector(".postre");
 const loader = document.querySelector("#loader-pedido");
 
 const estatusPedido = () => {
-  //El estatus de falla es del 70% porque esta en 0.8 el math.random
-  const estatus = Math.random() < 0.3;
+  //El estatus de falla es del 30% porque esta en 0.7 el math.random
+  const estatus = Math.random() < 0.7;
   return estatus;
 };
 
@@ -79,7 +79,6 @@ const manejarPedido = () => {
 };
 
 const rechazarPedido = (mensajeDeError) => {
-  console.log(mensajeDeError);
   resultado.innerHTML = "Ocurrio un error. Por favor intente nuevamente";
 };
 
