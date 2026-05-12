@@ -3,11 +3,11 @@ const resultado = document.querySelector(".mensaje");
 const bebida = document.querySelector(".bebida");
 const pizza = document.querySelector(".pizza");
 const postre = document.querySelector(".postre");
-const loader = document.querySelector("#loader-pedido")
+const loader = document.querySelector("#loader-pedido");
 
 const estatusPedido = () => {
-  //El estatus de falla es del 20% porque esta en 0.8 el math.random
-  const estatus = Math.random() < 0.8;
+  //El estatus de falla es del 70% porque esta en 0.8 el math.random
+  const estatus = Math.random() < 0.3;
   return estatus;
 };
 
@@ -16,17 +16,16 @@ const realizarPedido = () => {
   bebida.innerHTML = "";
   pizza.innerHTML = "";
   postre.innerHTML = "";
-  loader.style.display = 'block';
+  loader.style.display = "block";
 
   const miPedido = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (estatusPedido()) {
-        loader.style.display = 'none';
+        loader.style.display = "none";
         resolve("Pedido exitoso. Su pizza esta en camino");
       } else {
-        loader.style.display = 'none';
+        loader.style.display = "none";
         reject("Ocurrio un error. Por favor intente nuevamente");
-
       }
     }, 3000);
   });
@@ -35,34 +34,37 @@ const realizarPedido = () => {
 
 const prepararBebida = () => {
   return new Promise((resolve) => {
-    bebida.innerHTML = "Preparando..."
-    setTimeout(() => resolve("Bebida lista"), 2000); 
+    bebida.innerHTML = "Preparando...";
+    setTimeout(() => resolve("Bebida lista"), 5000);
   });
 };
 
 const prepararPizza = () => {
-   pizza.innerHTML = "Preparando..."
+  pizza.innerHTML = "Preparando...";
   return new Promise((resolve) => {
-    setTimeout(() => resolve("Pizza lista"), 2000);
+    setTimeout(() => resolve("Pizza lista"), 5000);
   });
 };
 
 const prepararPostre = () => {
-   postre.innerHTML = "Preparando..."
+  postre.innerHTML = "Preparando...";
   return new Promise((resolve) => {
-    setTimeout(() => resolve("Postre listo"), 2000);
+    setTimeout(() => resolve("Postre listo"), 5000);
   });
 };
 
 const prepararPedido = async () => {
   try {
     const bebidaLista = await prepararBebida();
+    bebida.classList.add("comida-lista")
     bebida.innerHTML = `Bebida lista`;
 
     const pizzaLista = await prepararPizza();
+    pizza.classList.add("comida-lista")
     pizza.innerHTML = `Pizza lista`;
 
     const postreListo = await prepararPostre();
+    postre.classList.add("comida-lista")
     postre.innerHTML = `Postre listo`;
 
     resultado.innerHTML = "¡Todo servido!";

@@ -18,7 +18,7 @@
 }
 
 body {
-    /* Fondo con un degradado animado y un patrón sutil de comida */
+
 background-image: url('pizza.jpg');
     background-attachment: fixed;
     font-family: 'Montserrat', sans-serif;
@@ -27,10 +27,14 @@ background-image: url('pizza.jpg');
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
 }
 
-/* Contenedor Principal */
+
 .view-viewport {
     width: 100%;
     display: flex;
@@ -47,7 +51,6 @@ background-image: url('pizza.jpg');
     border: 2px solid rgba(0, 0, 0, 0.562);
 }
 
-/* Header con diseño más cálido */
 .app-header {
     height: 250px;
     background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), 
@@ -78,7 +81,7 @@ background-image: url('pizza.jpg');
     box-shadow: 0 4px 15px rgba(255, 165, 2, 0.4);
 }
 
-/* Área de Acción */
+
 .app-content {
     padding: 40px;
     background: linear-gradient(to bottom, #ffffff, #fcfcfc);
@@ -117,7 +120,7 @@ background-image: url('pizza.jpg');
     color: black;
 }
 
-/* Grid de Seguimiento */
+
 .tracking-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -161,7 +164,7 @@ background-image: url('pizza.jpg');
     min-height: 20px;
 }
 
-/* Estados Visuales Mejorados */
+
 .item-card:has(div:not(:empty)) {
     border-color: var(--success);
     box-shadow: 0 10px 25px rgba(65, 65, 65, 0.15);
@@ -172,7 +175,7 @@ background-image: url('pizza.jpg');
     transform: scale(1.2);
 }
 
-/* Animación cuando dice "Preparando..." */
+
 .bebida:contains("Preparando"), 
 .pizza:contains("Preparando"), 
 .postre:contains("Preparando") {
@@ -185,21 +188,75 @@ background-image: url('pizza.jpg');
     color: var(--success);
 }
 
-/* El contenedor del loader para centrarlo */
+
 .loader-container {
-    display: none; /* Se activa con JS */
+    display: none; 
     margin: 20px auto;
 }
 
-/* El diseño del círculo */
+
 .loader {
     width: 45px;
     height: 45px;
     border: 5px solid #f3f3f3;
-    border-top: 5px solid #ff1b2e; /* Color rojo de tu marca */
+    border-top: 5px solid #ff1b2e; 
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 0 auto;
+}
+
+.comida-lista {
+color: rgb(0, 132, 29);
+}
+
+footer {
+    margin-top: 50px;
+    padding: 25px;
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+footer a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.author-name {
+    color: var(--primary);
+    font-weight: 800;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.author-name::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+footer a:hover .author-name {
+    color: var(--text-dark);
+}
+
+footer a:hover .author-name::after {
+    width: 100%;
 }
 
 @keyframes spin {
